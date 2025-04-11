@@ -5,13 +5,20 @@ import { data } from "../data/data";
 // Return example: ['name1', 'name2', ... , 'nameN']
 
 export function getAsteroidsDiscoveredAfterYear(data, year) {
-  const asteroidNames = data.asteroids
+  return data.asteroids.reduce((acc, asteroid) => {
+    if (asteroid.discoveryYear > year) {
+      acc.push(asteroid.name);
+    }
+    return acc;
+  }, []);
+}
+
+/*   const asteroidNames = data.asteroids
     .filter((asteroid) => asteroid.discoveryYear > year)
     .map((asteroid) => asteroid.name);
 
   console.log(asteroidNames);
-  return asteroidNames;
-}
+  return asteroidNames; */
 
 // === TEST YOURSELF ===
 // Once you're finished run the test with "npm run test-6"

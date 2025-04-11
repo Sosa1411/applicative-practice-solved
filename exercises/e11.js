@@ -6,12 +6,18 @@ import { data } from "../data/data";
 // Return example: ['name1', 'name2', ... , 'nameN']
 
 export function lowMoonsPlanets(data) {
-  const planetNames = data.planets
-    .filter((planet) => !planet.moons || planet.moons.length < 10)
-    .map((planet) => planet.name);
-  return planetNames;
+  return data.planets.reduce((acc, planet) => {
+    if (!planet.moons || planet.moons.length < 10) {
+      acc.push(planet.name);
+    }
+    return acc;
+  }, []);
 }
 
+/* const planetNames = data.planets
+  .filter((planet) => !planet.moons || planet.moons.length < 10)
+  .map((planet) => planet.name);
+return planetNames; */
 // === TEST YOURSELF ===
 // Once you're finished run the test with "npm run test-11"
 // If the test has all tests passed, switch to the next exercise file

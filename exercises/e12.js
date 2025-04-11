@@ -5,11 +5,16 @@ import { data } from "../data/data";
 // Return example: 42
 
 export function allPlanetsMoonsCount(data) {
-  const moonTotal = data.planets.reduce(function (sum, planet) {
+  return data.planets.reduce(
+    (sum, planet) => sum + (planet.moons?.length || 0),
+    0
+  );
+}
+
+/*   const moonTotal = data.planets.reduce(function (sum, planet) {
     return sum + (planet.moons ? planet.moons.length : 0);
   }, 0);
-  return moonTotal;
-}
+  return moonTotal; */
 
 // === TEST YOURSELF ===
 // Once you're finished run the test with "npm run test-12"

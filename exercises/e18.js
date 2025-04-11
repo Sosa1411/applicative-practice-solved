@@ -9,14 +9,14 @@ export function getGreatestDiscoveryYear(data) {
     .filter((asteroids) => asteroids.discoveryYear)
     .map((year) => year.discoveryYear);
 
-  const yearCounts = allDiscoveryYears.reduce(function (acc, year) {
+  const yearCounts = allDiscoveryYears.reduce((acc, year) => {
     acc[year] = (acc[year] || 0) + 1;
     return acc;
   }, {});
 
   const yearCountPairs = Object.entries(yearCounts);
 
-  const greatestYear = yearCountPairs.reduce(function (max, current) {
+  const greatestYear = yearCountPairs.reduce((max, current) => {
     return current[1] > max[1] ? current : max;
   })[0];
   console.log(greatestYear);

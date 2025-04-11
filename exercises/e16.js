@@ -9,16 +9,11 @@
  */
 
 export function find(array, callback) {
-  let finalArray = [];
-
   for (let element of array) {
     if (callback(element)) {
       return element;
     }
   }
-  console.log(finalArray);
-
-  return undefined;
 }
 
 // === TEST YOURSELF ===

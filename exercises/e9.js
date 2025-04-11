@@ -5,12 +5,14 @@ import { data } from "../data/data";
 // Return example: { key1: value1, key2: value2, ... , keyN: valueN }
 
 export function getEarthData(data) {
-  const earthObject = data.planets.find(function (earth) {
-    return earth.name === "Earth";
-  });
-  return earthObject;
+  const earth = data.planets.find((earth) => earth.name === "Earth");
+  return earth;
 }
 
+/*   const earthObject = data.planets.find(function (earth) {
+    return earth.name === "Earth";
+  });
+  return earthObject; */
 // === TEST YOURSELF ===
 // Once you're finished run the test with "npm run test-9"
 // If the test has all tests passed, switch to the next exercise file
